@@ -241,6 +241,7 @@ function Nav({ activeSection }) {
   }, []);
 
   const links = [
+    { id: "about", label: "About" },
     { id: "work", label: "Work" },
     { id: "research", label: "Research" },
     { id: "experience", label: "Experience" },
@@ -468,7 +469,7 @@ export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const sections = ["work", "research", "experience", "skills", "writing", "contact"];
+    const sections = ["about", "work", "research", "experience", "skills", "writing", "contact"];
     const handleScroll = () => {
       for (const id of sections) {
         const el = document.getElementById(id);
@@ -540,16 +541,16 @@ export default function Portfolio() {
             fontFamily: "'Playfair Display', Georgia, serif",
             fontSize: 68, fontWeight: 800, lineHeight: 1.08,
             letterSpacing: "-0.03em", color: "#0f1b3d",
-            marginBottom: 24, maxWidth: 780,
+            marginBottom: 24, maxWidth: 820,
           }}>
-            Building production ML{" "}
+            Solving energy's hardest problems{" "}
             <span style={{
               fontStyle: "italic", fontWeight: 500,
               background: "linear-gradient(135deg, #c5993a, #a07820)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}>
-              for the energy transition
+              with AI.
             </span>
           </h1>
         </FadeIn>
@@ -558,9 +559,9 @@ export default function Portfolio() {
           <p className="hero-sub" style={{
             fontFamily: "'Source Sans 3', sans-serif",
             fontSize: 18, color: "#4a5068", lineHeight: 1.75,
-            maxWidth: 620, marginBottom: 48, fontWeight: 400,
+            maxWidth: 640, marginBottom: 48, fontWeight: 400,
           }}>
-            I architect and build end-to-end ML systems that solve real problems in clean energy — from geospatial site selection and PV forecasting to grid interconnection modeling and energy storage dispatch. Problem solver first, engineer always.
+            Machine learning, mathematical optimization, and production engineering — applied to PV forecasting, grid interconnection, energy storage dispatch, and solar site intelligence. From architecture to deployment, I build the systems that turn complex energy problems into working solutions.
           </p>
         </FadeIn>
 
@@ -597,6 +598,55 @@ export default function Portfolio() {
       <div style={{ maxWidth: 1140, margin: "0 auto", padding: "0 36px" }}>
         <div style={{ height: 1, background: "linear-gradient(to right, #c5993a, #e2e4e9 30%)" }} />
       </div>
+
+      {/* ═══ ABOUT ═══ */}
+      <section id="about" style={{ maxWidth: 1140, margin: "0 auto", padding: "80px 36px" }}>
+        <FadeIn>
+          <div style={{ display: "flex", gap: 56, alignItems: "flex-start", flexWrap: "wrap" }}>
+            {/* Photo */}
+            <div style={{
+              width: 200, height: 200, borderRadius: 12, flexShrink: 0,
+              background: "#e2e4e9",
+              backgroundImage: "url('/headshot.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              border: "3px solid #0f1b3d",
+            }} />
+
+            {/* Bio */}
+            <div style={{ flex: 1, minWidth: 320 }}>
+              <span style={{
+                fontFamily: "'IBM Plex Mono', monospace",
+                fontSize: 11, color: "#c5993a", letterSpacing: "0.1em",
+                textTransform: "uppercase", fontWeight: 600,
+              }}>
+                About
+              </span>
+              <h2 style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: 32, fontWeight: 700, color: "#0f1b3d",
+                letterSpacing: "-0.02em", marginTop: 10, marginBottom: 18,
+              }}>
+                Sundeep Yalamanchili
+              </h2>
+              <div style={{
+                fontFamily: "'Source Sans 3', sans-serif",
+                fontSize: 16, color: "#3d4460", lineHeight: 1.8,
+              }}>
+                <p style={{ marginBottom: 16 }}>
+                  AI Engineer specializing in production machine learning systems for the renewable energy sector. Currently leading AI and ML initiatives at Balanced Rock Power, where I designed, built, and deployed the company's entire AI infrastructure from the ground up — spanning solar site evaluation, energy yield forecasting, grid interconnection analysis, and contract intelligence.
+                </p>
+                <p style={{ marginBottom: 16 }}>
+                  My work centers on translating complex energy domain problems into scalable ML systems that deliver measurable business impact. Core areas of expertise include mathematical optimization (LP/MILP), PV generation forecasting, energy storage dispatch, retrieval-augmented generation, and geospatial machine learning — all deployed on production cloud infrastructure across Azure and GCP.
+                </p>
+                <p>
+                  M.S. in Robotics and Autonomous Systems (AI) from Arizona State University. U.S. Patent Application pending for SCOUT, the decision intelligence platform I architected for utility-scale solar development.
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
 
       {/* ═══ PRODUCTION WORK ═══ */}
       <section id="work" style={{ maxWidth: 1140, margin: "0 auto", padding: "80px 36px" }}>
@@ -1026,13 +1076,12 @@ export default function Portfolio() {
               fontSize: 16, color: "#4a5068", lineHeight: 1.75,
               marginBottom: 40,
             }}>
-              I'm driven by a single goal: accelerating the clean energy transition through AI and ML. Whether it's architecting production systems, solving hard optimization problems, or building the next generation of tools for solar development — I'm always up for the conversation.
+              I'm driven by a single goal: accelerating the clean energy transition through AI and ML. If you're building something that matters in energy, climate, or infrastructure — let's talk.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
               {[
                 { label: "Email", value: "sundeepyalamanchili5@gmail.com", href: "mailto:sundeepyalamanchili5@gmail.com" },
-                { label: "Phone", value: "480-747-3587", href: "tel:480-747-3587" },
                 { label: "LinkedIn", value: "linkedin.com/in/yalamanchilisundeep", href: "https://www.linkedin.com/in/yalamanchilisundeep/" },
                 { label: "GitHub", value: "github.com/yalamanchili7", href: "https://github.com/yalamanchili7" },
                 { label: "Medium", value: "medium.com/@sundeepyalamanchili5", href: "https://medium.com/@sundeepyalamanchili5" },
